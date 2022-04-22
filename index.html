@@ -1,0 +1,64 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+
+<body>
+  <div class="w-75 mx-auto my-4">
+    <div class="mb-3">
+      <label for="productName">Product name : </label>
+      <input onkeyup="validateName()" class="form-control my-2" type="text" id="productName">
+      <div class="alert alert-danger display" role="alert" id="alert1">
+        You should start With Capital letter and product name doesn't exceed 6 letters and not less than 3
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="productPrice">Product Price : </label>
+      <input onkeyup="validatePrice()" class="form-control my-2" type="text" id="productPrice">
+      <div class="alert alert-danger display" role="alert" id="alert2">
+        You should put price between 1000 and 10000
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="productCategory">Product Category : </label>
+      <input onkeyup="validateCategory()" class="form-control my-2" type="text" id="productCategory">
+      <div class="alert alert-danger display" role="alert" id="alert3">
+        You should put category of tv or laptop or mobile 
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="productDescription">Product Description : </label>
+      <textarea onkeyup="validateDesc()" class="form-control" id="productDescription"></textarea>
+      <div class="alert alert-danger display" role="alert" id="alert4">
+        You should put at least 30 word
+      </div>
+    </div>
+    <button id="mainbtn" type="submit" class="btn btn-outline-primary" disabled onclick="addProduct()" onkeyup="btnvalid()">add product</button>
+
+  </div>
+  <div class="w-75 mx-auto my-3">
+    <label class="my-3">Search For Products</label>
+    <input type="text" onkeyup="searchProducts(this.value)" class="form-control">
+  </div>
+
+  <table class="table w-75 mx-auto my-5 text-center">
+    <thead>
+      <th>Index</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </thead>
+    <tbody id="tableBody">
+
+    </tbody>
+  </table>
+  <script src="main.js"></script>
+
+</body>
+
+</html>
